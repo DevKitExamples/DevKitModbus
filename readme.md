@@ -1,6 +1,7 @@
-#Connect to IoT Edge device gateway as Modbus TCP device
+# Connect to IoT Edge device gateway as Modbus TCP device
 
-Azure IoT Edge moves cloud analytics and custom business logic to devices so that your organization can focus on business insights instead of data management. 
+Azure IoT Edge moves cloud analytics and custom business logic to devices so that your organization can focus on business insights instead of data management.
+
 In this example, we will implement a simple Modbus TCP client on DevKit and use an IoT Edge device as a gateway. The gateway reads data from DevKit through Modbus TCP protocol, then communicates that data to the cloud using a supported protocol.
 
 ![Modbus TCP Client - IoT Edge device - Cloud](screenshots/flow.png)
@@ -11,7 +12,6 @@ In this example, we will implement a simple Modbus TCP client on DevKit and use 
 To complete the steps in this tutorial, you need the following:
 
 * An Azure IoT Edge device. For a walkthrough on how to set up one, see [Deploy Azure IoT Edge on a simulated device in Windows](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-windows) or [Linux](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux).
-* The primary key connection string for the IoT Edge device.
 * Prepare your DevKit with [Getting Started Guide](https://microsoft.github.io/azure-iot-developer-kit/docs/get-started/) and upgrade to latest sdk (>=1.3.5).
 * Upgrade to latest firmware (>= 1.3.0) with [Firmware Upgrading](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/) tutorial.
 
@@ -38,8 +38,7 @@ To complete the steps in this tutorial, you need the following:
 4. Select module **tempSensor**:
     * Change **Image** field to `microsoft/azureiotedge-modbus-tcp:1.0-preview`
     * Check the Enable box to update the module twin's desired properties.
-
-    * Copy the following JSON into the text box. Change the value of SlaveConnection to the IPv4 address of your Modbus device.
+    * Copy the following JSON into the text box. Change the value of SlaveConnection to the IPv4 address of DevKit.
     >```
     >{
     >  "properties.desired":{  
@@ -74,4 +73,5 @@ To complete the steps in this tutorial, you need the following:
 7. In the Review Template step, select Submit. 
 Return to the device details page and select Refresh. You should see the new modbus running along with the IoT Edge runtime.
 
-## [View generated data](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-python-module#view-generated-data)
+## View generated data
+Monitor device to cloud messages sent from your IoT Edge device to your IoT hub: [View generated data](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-python-module#view-generated-data).
