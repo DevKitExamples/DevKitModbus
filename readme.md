@@ -11,7 +11,7 @@ In this example, we will implement a simple Modbus TCP client on DevKit and use 
 
 To complete the steps in this tutorial, you need the following:
 
-* An Azure IoT Edge device. For a walkthrough on how to set up one, see [Deploy Azure IoT Edge on a simulated device in Windows](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-windows) or [Linux](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux).
+* An Azure IoT Edge device. For a walkthrough on how to set up one, see [Deploy Azure IoT Edge on a simulated device in Windows](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-windows) or [macOS](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-simulate-device-linux).
 * Prepare your DevKit with [Getting Started Guide](https://microsoft.github.io/azure-iot-developer-kit/docs/get-started/) and upgrade to latest sdk (>=1.3.5).
 * Upgrade to latest firmware (>= 1.3.0) with [Firmware Upgrading](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/) tutorial.
 
