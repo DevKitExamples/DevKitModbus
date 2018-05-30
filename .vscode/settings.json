@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        ".build": true,
+    },
+    "C_Cpp.intelliSenseEngine": "Tag Parser"
+}
