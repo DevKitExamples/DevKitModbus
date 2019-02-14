@@ -36,7 +36,7 @@ To complete the steps in this tutorial, you need the following:
 2. Go to IoT Edge (preview) and select your IoT Edge device created in [Before you begin](#before-you-begin).
 3. Select Set modules.
 4. Select module **tempSensor**:
-    * Change **Image** field to `microsoft/azureiotedge-modbus-tcp:1.0-preview`
+    * Change **Image** field to `mcr.microsoft.com/azureiotedge/modbus:1.0`
     * Check the Enable box to update the module twin's desired properties.
     * Copy the following JSON into the text box. Change the value of SlaveConnection to the IPv4 address of DevKit.
     >```
