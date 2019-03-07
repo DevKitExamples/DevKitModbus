@@ -5,6 +5,7 @@ static bool hasWifi = false;
 
 static DevI2C *ext_i2c;
 static HTS221Sensor *ht_sensor;
+static int dataSent;
 
 WiFiServer server(502);
 
@@ -13,7 +14,6 @@ static void InitWifi()
     if (WiFi.begin() == WL_CONNECTED)
     {
         IPAddress ip = WiFi.localIP();
-        Screen.print(1, "IPV4 address: ");
         Screen.print(2, ip.get_address());
         hasWifi = true;
     }
@@ -23,13 +23,27 @@ static void InitWifi()
     }
 }
 
+static void showSent(void)
+{
+    char tmp[32];
+    sprintf(tmp, "Sent:%d", dataSent);
+    Screen.print(3, tmp);
+}
+
 void setup()
 {
+    dataSent = 0;
+    
+    Screen.init();
+    Screen.print(0, "IoT DevKit");
+    Screen.print(1, "--- MODBUS ---");
+    Screen.print(2, "Initializing...");
     InitWifi();
     if (hasWifi)
     {
         server.begin();
     }
+    showSent();
 
     ext_i2c = new DevI2C(D14, D15);
     ht_sensor = new HTS221Sensor(*ext_i2c);
@@ -142,5 +156,8 @@ void loop() {
         // close the connection:
         client.stop();
         Serial.println("client disonnected");
+
+        dataSent++;
+        showSent();
     }
 }
